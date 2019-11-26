@@ -1,8 +1,19 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-const app = express()
+const app = express();
+
+mongoose.connect('mongodb+srv://jpvc:5250jpvc@cluster0-di3dt.mongodb.net/test?retryWrites=true&w=majority', 
+{ useUnifiedTopology: true, useNewUrlParser: true  }, 
+ err => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log("Connected to the database.");
+    }
+});
 
 // Middlewares
 app.use(morgan('dev'));
