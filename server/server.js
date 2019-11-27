@@ -2,10 +2,15 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+const User = require('./models/user');
+
+dotenv.config();
 
 const app = express();
 
-mongoose.connect('mongodb+srv://jpvc:5250jpvc@cluster0-di3dt.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect(process.env.DATABASE, 
 { useUnifiedTopology: true, useNewUrlParser: true  }, 
  err => {
     if (err) {
@@ -20,16 +25,9 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-// GET:retrieve data from the server
-app.get('/', (req, res) => {
-    res.json("Hello amazon clone");
-});
-
-// POST:send data from frontend to backend
-app.post('/', (req, res) => {
-    console.log(req.body.name);
-});
+// API
+const productRoutes = require('./routes/product');
+app.use('/api', productRoutes);
 
 app.listen(3000, (err) => {
     if (err) {
