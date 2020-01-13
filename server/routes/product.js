@@ -1,12 +1,13 @@
-const router = require('express').Router()
+const router = require('express').Router();
 const Product = require('../models/product');
-
-const upload = require("../middlewares/upload.photo")
+const upload = require("../middlewares/upload-photo");
 
 // POST request -> create a new product
 router.post('/products', upload.single("photo"), async (req, res) => {
     try {
         let product = new Product();
+        product.ownerID = req.body.ownerID;
+        product.categoryID = req.body.categoryID;
         product.title = req.body.title;
         product.price = req.body.price;
         product.description = req.body.description;
