@@ -3,12 +3,15 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors')
 
 const User = require('./models/user');
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors())
 
 mongoose.connect(process.env.DATABASE, 
 { useUnifiedTopology: true, useNewUrlParser: true  }, 
@@ -34,7 +37,7 @@ app.use('/api', productRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', ownerRoutes);
 
-app.listen(3000, (err) => {
+app.listen(3001, (err) => {
     if (err) {
         console.log(err)
     } else {
