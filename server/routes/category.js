@@ -1,8 +1,8 @@
-const router = require('express').Router()
-const Category = require('../models/category');
+const router = require("express").Router();
+const Category = require("../models/category");
 
 // POST request
-router.post('/categories', async(req, res) => {
+router.post("/categories", async (req, res) => {
     try {
         const category = new Category();
         category.type = req.body.type;
@@ -11,13 +11,13 @@ router.post('/categories', async(req, res) => {
 
         res.json({
             success: true,
-            message: "Successfully created a new category."
+            message: "Successfuly created a new category"
         });
     } catch (err) {
         res.status(500).json({
             success: false,
             message: err.message
-        })
+        });
     }
 });
 
@@ -33,8 +33,8 @@ router.get("/categories", async (req, res) => {
         res.status(500).json({
             success: false,
             message: err.message
-        })
+        });
     }
-})
+});
 
 module.exports = router;
