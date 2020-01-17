@@ -12,10 +12,9 @@
             </div>
           </div>
           <!-- Search bar -->
-          <!-- <div class="col-sm-6 pt-0">
+          <div class="col-sm-6 pt-0">
             <Search />
-          </div> -->
-
+          </div>
           <div class="col-sm-4"></div>
         </div>
 
@@ -112,4 +111,10 @@
 </template>
 
 <script>
+import Search from "~/components/Search";
+export default {
+  components: {
+    Search
+  }
+}
 </script>
