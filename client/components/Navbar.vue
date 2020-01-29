@@ -73,7 +73,17 @@
                 </span>
               </a>
               <span class="icp-nav-link-border"></span>
-              <template>
+              <template v-if="$auth.$state.loggedIn">
+                <nuxt-link
+                  to="/profile"
+                  class="nav-a nav-a-2"
+                  id="nav-link-accountList"
+                  tabindex="0">
+                  <span class="nav-line-1">Hello,</span>
+                  <span class="nav-line-2">{{ $auth.$state.user.name }}</span>
+                </nuxt-link>
+              </template>
+              <template v-else>
                 <nuxt-link
                   to="/signup"
                   class="nav-a nav-a-2"
