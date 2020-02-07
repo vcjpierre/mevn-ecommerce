@@ -1925,7 +1925,7 @@ a.kicsPopover span {
     border-color: #c59f43 #846a29 #957321;
 }
 .pr-fb-icon{
-    background: url("../img/followIcons.png") -12px -3px ;
+    /* background: url("../img/followIcons.png") -12px -3px ; */
     width: 11px;
     height: 11px;
     position: relative;
@@ -2894,7 +2894,7 @@ div.navFooterLine {
     color: #CCC;
 }
 .nav-arrow.icp-up-down-arrow {
-    background: url(https://m.media-amazon.com/images/G/01/AUIClients/InternationalCustomerPref…ncesNavAssets-icp_sprite-7d1bfde…._V2_.png);
+    /* background: url(https://m.media-amazon.com/images/G/01/AUIClients/InternationalCustomerPref…ncesNavAssets-icp_sprite-7d1bfde…._V2_.png); */
     width: 12px;
     height: 12px;
     background-position: -77px -80px;
