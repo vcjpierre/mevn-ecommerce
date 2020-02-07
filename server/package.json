@@ -4,7 +4,7 @@
   "description": "",
   "watch": "server.js",
   "scripts": {
-    "watch": "nodemon server"
+    "serve": "nodemon server"
   },
   "author": "",
   "license": "ISC",
