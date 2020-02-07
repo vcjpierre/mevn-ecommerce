@@ -1,12 +1,14 @@
-const router = require('express').Router();
-const Product = require('../models/product');
+const router = require("express").Router();
+const Product = require("../models/product");
+
 const upload = require("../middlewares/upload-photo");
 
-// GET requesst - get all products
+// GET all products
 router.get("/products", async (req, res) => {
     try {
         let products = await Product.find()
             .populate("owner category")
+            .populate("reviews", "rating")
             .exec();
         res.json({
             success: true,
@@ -20,13 +22,14 @@ router.get("/products", async (req, res) => {
     }
 });
 
-// GET request - get a single product
+// GET single product
 router.get("/products/:id", async (req, res) => {
     try {
         let product = await Product.findOne({
                 _id: req.params.id
             })
             .populate("owner category")
+            .populate("reviews", "rating")
             .exec();
         res.json({
             success: true,
@@ -40,7 +43,7 @@ router.get("/products/:id", async (req, res) => {
     }
 });
 
-// POST request -> create a new product
+// POST new product
 router.post("/products", upload.single("photo"), async (req, res) => {
     try {
         let product = new Product();
@@ -66,7 +69,7 @@ router.post("/products", upload.single("photo"), async (req, res) => {
     }
 });
 
-// PUT request - Update a single product
+// PUT single product
 router.put("/products/:id", upload.single("photo"), async (req, res) => {
     try {
         let product = await Product.findOneAndUpdate({
@@ -97,7 +100,7 @@ router.put("/products/:id", upload.single("photo"), async (req, res) => {
     }
 });
 
-// DELETE request - delete a single product
+// DELETE single product
 router.delete("/products/:id", async (req, res) => {
     try {
         let deletedProduct = await Product.findOneAndDelete({
