@@ -25,6 +25,8 @@ mongoose.connect(
     }
 );
 
+mongoose.set('useCreateIndex', true);
+
 // Middlewares
 app.use(cors());
 app.use(morgan("dev"));
