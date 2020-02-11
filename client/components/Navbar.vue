@@ -26,7 +26,9 @@
                 <div class="nav-sprite" id="nav-packard-glow-loc-icon"></div>
                 <div id="glow-ingress-block">
                   <span class="nav-line-1" id="glow-ingress-line1">Deliver to</span>
-                  <span class="nav-line-2" id="glow-ingress-line2">
+                  <span
+                    class="nav-line-2"
+                    id="glow-ingress-line2">
                     {{ $auth.$state.user.address.city }}
                   </span>
                 </div>
@@ -43,7 +45,7 @@
                     <span class="nav-icon nav-arrow" style="visibility: visible"></span>
                   </span>
                 </nuxt-link>
-              </div>
+              </div>        
               <div class="nav-xshop-container">
                 <div class="nav-xshop">
                   <a href="#" class="nav-a">Today's deals</a>
@@ -109,8 +111,8 @@
                   id="nav-cart-count"
                   aria-hidden="true"
                   class="nav-cart-count nav-cart-0">
-                  4
-                </span>
+                    {{ getCartLength }}
+                  </span>
               </nuxt-link>
             </div>
           </div>
@@ -121,10 +123,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Search from "~/components/Search";
 export default {
   components: {
     Search
+  },
+  computed: {
+    ...mapGetters(["getCartLength"])
   }
-}
+};
 </script>
