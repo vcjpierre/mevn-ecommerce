@@ -1,7 +1,9 @@
 export const state = () => ({
   // State
   cart: [],
-  cartLength: 0
+  cartLength: 0,
+  shippingPrice: 0,
+  shippingEstimatedDelivery: ""
 });
 
 export const actions = {
@@ -44,10 +46,7 @@ export const mutations = {
   3. Update the length of the cart
   4. replace the old product with the updated product
   */
-  changeQty(state, {
-    product,
-    qty
-  }) {
+  changeQty(state, { product, qty }) {
     let cartProduct = state.cart.find(prod => prod._id === product._id);
     cartProduct.quantity = qty;
 
@@ -70,6 +69,11 @@ export const mutations = {
     state.cartLength -= product.quantity;
     let indexOfProduct = state.cart.indexOf(product);
     state.cart.splice(indexOfProduct, 1);
+  },
+
+  setShipping(state, { price, estimatedDelivery }) {
+    state.shippingPrice = price;
+    state.shippingEstimatedDelivery = estimatedDelivery;
   }
 };
 
@@ -87,5 +91,13 @@ export const getters = {
     });
 
     return total;
+  },
+  getCartTotalPriceWithShipping(state) {
+    let total = 0;
+    state.cart.map(product => {
+      total += product.price * product.quantity;
+    });
+
+    return total + state.shippingPrice;
   }
 };
