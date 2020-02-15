@@ -21,7 +21,7 @@
         <div class="row">
           <!-- Delivery -->
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pl-2">
-            <div class="nav-global-location">
+            <div class="nav-global-location" v-if="$auth.$state.loggedIn">
               <nuxt-link to="/address" class="nav-a nav-a-2">
                 <div class="nav-sprite" id="nav-packard-glow-loc-icon"></div>
                 <div id="glow-ingress-block">
