@@ -58,6 +58,9 @@
           </svg>
         </button>
       </div>
+      <div style="float:right">
+        <img src="https://res.cloudinary.com/hilnmyskv/image/upload/q_auto/v1595410010/Algolia_com_Website_assets/images/shared/algolia_logo/search-by-algolia-dark-background.png" alt="Search by algolia">
+      </div>
     </form>
   </div>
 </template>
