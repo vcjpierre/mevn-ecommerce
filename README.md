@@ -1,4 +1,4 @@
-<h3 align="center">FullStack Ecommerce</h3>
+<h3 align="center">MEVN Full Stack E-Commerce</h3>
 
 ## 🧐 About <a name = "about"></a>
 Amazon website using Vue.js and Node.js.
