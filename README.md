@@ -1,7 +1,7 @@
-<h3 align="center">MEVN Full Stack E-Commerce</h3>
+<h3 align="center">MEVN E-Commerce</h3>
 
 ## 🧐 About <a name = "about"></a>
-Amazon website using Vue.js and Node.js.
+An E-Commerce developed using MEVN stack.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Vue.js](https://vuejs.org/)
