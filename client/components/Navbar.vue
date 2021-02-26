@@ -87,7 +87,7 @@
               </template>
               <template v-else>
                 <nuxt-link
-                  to="/signup"
+                  to="/login"
                   class="nav-a nav-a-2"
                   id="nav-link-accountList"
                   tabindex="0">
