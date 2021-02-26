@@ -567,7 +567,7 @@
           <li>
             <a href class="nav_a">Internet-Based Ads</a>
           </li>
-          <li class="nav_last">© 1996-2019, Amazon.com, Inc. or its affiliates</li>
+          <li class="nav_last">© 1996-2021, Amazon.com, Inc. or its affiliates</li>
         </ul>
       </div>
     </div>
