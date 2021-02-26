@@ -32,7 +32,7 @@
                         <div class="displayAddressDiv">
                           <!-- User's address -->
                           <ul class="displayAddressUL">
-                            <li>{{ $auth.$state.user.address.fullname }}</li>
+                            <li>{{ $auth.$state.user.address.fullName }}</li>
                             <li>{{ $auth.$state.user.address.streetAddress }}</li>
                             <li>{{ $auth.$state.user.address.city }}</li>
                             <li>{{ $auth.$state.user.address.country }}</li>
@@ -354,7 +354,7 @@
         <hr />
         <p class="a-size-small a-text-center a-color-secondary" data-testid>
           <a href="#">Conditions of Use</a> |
-          <a href="#">Privacy Notice</a> © 1996-2019, Amazon.com, Inc.
+          <a href="#">Privacy Notice</a> © 1996-2021, Amazon.com, Inc.
         </p>
       </div>
     </div>
