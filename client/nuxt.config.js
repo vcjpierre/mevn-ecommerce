@@ -1,7 +1,6 @@
-  const URL = "http://localhost:3001";
+const URL = "http://localhost:3001";
 
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */
