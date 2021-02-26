@@ -33,7 +33,7 @@
             <!-- Password -->
             <div class="a-spacing-top-medium">
               <label>Password</label>
-              <input class="a-input-text" style="width: 100%" v-model="password" />
+              <input type="password" class="a-input-text" style="width: 100%" v-model="password" />
             </div>
 
             <!-- Button -->
