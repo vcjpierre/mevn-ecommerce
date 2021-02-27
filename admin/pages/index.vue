@@ -75,6 +75,7 @@
 export default {
   // asyncData is fetching Data before nuxt page finished loading on the browser.
   // It is good for SEO because the data will be loaded first
+  authenticated: true,
   async asyncData({ $axios }) {
     try {
       let response = await $axios.$get("http://localhost:3001/api/products");

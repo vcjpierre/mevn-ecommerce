@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   /*
   ** Headers of the page
@@ -43,7 +45,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'nuxt-oauth'
   ],
+  oauth: {
+    sessionName: 'AdminSession',
+    secretKey: process.env.SECRET_KEY,
+    oauthHost: process.env.OAUTH_HOST,
+    oauthClientID: process.env.OAUTH_CLIENT_ID,
+    oauthClientSecret: process.env.OAUTH_CLIENT_SECRET,
+    scopes: ['openid', 'profile']
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
