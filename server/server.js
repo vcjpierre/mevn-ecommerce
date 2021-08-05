@@ -4,12 +4,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
-
-const User = require("./models/user");
+const app = express();
+const port = 3001;
 
 dotenv.config();
-
-const app = express();
 
 mongoose.connect(
     process.env.DATABASE, {
@@ -30,9 +28,10 @@ mongoose.set('useCreateIndex', true);
 // Middlewares
 app.use(cors());
 app.use(morgan("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
+
+app.use(express.json());
+app.use(express.urlencoded({ 
+    extended: true 
 }));
 
 const productRoutes = require("./routes/product");
@@ -55,10 +54,10 @@ app.use("/api", paymentRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", searchRoutes);
 
-app.listen(3001, err => {
+app.listen(port, err => {
     if (err) {
         console.log(err);
     } else {
-        console.log("Listening on PORT", 3001);
+        console.log(`Server running at http://localhost:${port}`);
     }
 });
