@@ -45,20 +45,28 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-oauth'
+    '@nuxtjs/auth-next'
   ],
-  oauth: {
-    sessionName: 'AdminSession',
-    secretKey: process.env.SECRET_KEY,
-    oauthHost: process.env.OAUTH_HOST,
-    oauthClientID: process.env.OAUTH_CLIENT_ID,
-    oauthClientSecret: process.env.OAUTH_CLIENT_SECRET,
-    scopes: ['openid', 'profile']
+  auth: {
+    redirect: {
+      callback: '/callback',
+      home: '/home',
+      login: '/',
+    },
+    localStorage: false,
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.AUTH0_DOMAIN,
+        clientId: process.env.AUTH0_CLIENT_ID,
+        scope: ['openid', 'profile', 'offline_access'],
+        accessType: 'offline',
+        responseType: 'code',
+        grantType: 'authorization_code',
+        codeChallengeMethod: 'S256',
+      }
+    },
   },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
   axios: {
   },
   /*
