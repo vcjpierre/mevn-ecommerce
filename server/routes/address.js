@@ -26,7 +26,7 @@ router.get("/addresses", verifyToken, async (req, res) => {
 // GET list of countries
 router.get("/countries", async (req, res) => {
   try {
-    let response = await axios.get("https://restcountries.eu/rest/v2/all");
+    let response = await axios.get("https://restcountries.com/v2/all");
 
     res.json(response.data);
   } catch (err) {
