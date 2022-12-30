@@ -54,6 +54,7 @@
     
 <script>
 export default {
+  middleware: 'auth',
   async asyncData({ $axios }) {
     try {
       let response = await $axios.$get("http://localhost:3001/api/owners");

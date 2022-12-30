@@ -29,7 +29,8 @@
                   <span
                     class="nav-line-2"
                     id="glow-ingress-line2">
-                    {{ $auth.$state.user.address.city }}
+                    Default address
+                    <!-- {{ $auth.$state.user.address.city }} -->
                   </span>
                 </div>
               </nuxt-link>
