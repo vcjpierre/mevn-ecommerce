@@ -29,8 +29,8 @@
                   <span
                     class="nav-line-2"
                     id="glow-ingress-line2">
-                    Default address
-                    <!-- {{ $auth.$state.user.address.city }} -->
+                    Address:
+                    {{ $auth.$state.user && $auth.$state.user.address ? $auth.$state.user.address.city : 'City not defined' }}
                   </span>
                 </div>
               </nuxt-link>

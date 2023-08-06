@@ -66,7 +66,7 @@
 export default {
   // asyncData is fetching Data before nuxt page finished loading on the browser.
   // It is good for SEO because the data will be loaded first
-  middleware: 'auth',
+  middleware: ['auth'],
   methods: {
     logout() {
       this.$auth0.logout({

@@ -40,9 +40,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth-next'
@@ -59,11 +57,6 @@ export default {
       auth0: {
         domain: process.env.AUTH0_DOMAIN,
         clientId: process.env.AUTH0_CLIENT_ID,
-        scope: ['openid', 'profile', 'offline_access'],
-        accessType: 'offline',
-        responseType: 'code',
-        grantType: 'authorization_code',
-        codeChallengeMethod: 'S256',
       }
     },
   },
